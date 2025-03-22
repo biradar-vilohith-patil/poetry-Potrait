@@ -20,7 +20,7 @@
 }
 
 body {
-    font-family: 'Open Sans';
+    font-family: 'Literature';
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
@@ -160,7 +160,7 @@ body {
     font-size: 18px;
     line-height: 1.8;
     color: #5c4c3d;
-    font-style: italic;
+    font-style: none;
     text-align: center;
 }
 
