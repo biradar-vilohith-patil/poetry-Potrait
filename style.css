@@ -20,7 +20,7 @@
 }
 
 body {
-    font-family: 'EB Garamond', serif;
+    font-family: 'Consolas';
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
