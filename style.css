@@ -20,7 +20,7 @@
 }
 
 body {
-    font-family: 'Literature';
+    font-family: 'Lato';
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
@@ -186,7 +186,7 @@ body {
 }
 
 .dedication-subtitle {
-    font-style: italic;
+    font-style: none;
     margin-top: 20px;
     font-size: 20px;
     color: #8a7357;
