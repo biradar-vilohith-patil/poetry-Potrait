@@ -20,7 +20,7 @@
 }
 
 body {
-    font-family: 'Raleway';
+    font-family: 'Courier New';
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
