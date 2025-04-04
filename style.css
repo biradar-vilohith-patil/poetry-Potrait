@@ -173,7 +173,7 @@ body {
 }
 
 .telugu-text {
-    font-family: 'EB Garamond";
+    font: 'EB Garamond";
     font-size: clamp(14px, 4vw, 18px);
     line-height: 1.8;
     color: #5c4c3d;
