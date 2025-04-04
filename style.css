@@ -22,7 +22,7 @@
 }
 
 body {
-    font : "Montserrat";
+    font : "Consolas" , "Montserrat";
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
