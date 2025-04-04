@@ -195,7 +195,7 @@ body {
 }
 
 .dedication-subtitle {
-    font-style: italic;
+  
     margin-top: 20px;
     font-size: clamp(16px, 5vw, 20px);
     color: #8a7357;
