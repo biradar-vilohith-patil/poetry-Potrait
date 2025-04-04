@@ -21,8 +21,17 @@
     box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('fonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+
 body {
-    font : "JetBrains Mono";
+  font-family: 'JetBrains Mono', monospace;
+}
+
+
+body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
