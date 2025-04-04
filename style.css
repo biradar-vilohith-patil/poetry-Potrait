@@ -11,6 +11,8 @@
     --gold-light: #f0e6d2;
     --gold-medium: #dcc7a1;
     --gold-dark: #c5a97e;
+    --mobile-padding: 15px;
+    --touch-size: 44px;
 }
 
 * {
@@ -20,13 +22,15 @@
 }
 
 body {
-    font-family: 'Consolas';
+    font-family: 'Consolas', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
-    padding: 0 20px;
+    padding: 0;
     background-image: linear-gradient(to bottom, #f7f2ed, #eee6dd);
     min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
 }
 
 /* Birthday Popup */
@@ -41,15 +45,16 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    touch-action: manipulation;
 }
 
 .popup-content {
     background: linear-gradient(135deg, #fff, #f8f3e8);
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
     text-align: center;
-    max-width: 90%;
-    width: 500px;
+    width: 90%;
+    max-width: 500px;
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
@@ -57,15 +62,15 @@ body {
 
 .popup-content h2 {
     color: #e25c67;
-    font-family: EB Garamond; 
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     font-weight: 600;
+    line-height: 1.2;
 }
 
 .popup-content p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 4vw, 1.2rem);
     margin-top: 30px;
     color: #333;
 }
@@ -115,12 +120,13 @@ body {
 }
 
 .container {
+    width: 100%;
     max-width: 850px;
-    margin: 40px auto;
+    margin: 20px auto;
     background: linear-gradient(to bottom, #ffffff, #f8f1ed);
     border-radius: var(--border-radius);
     box-shadow: 0 15px 40px var(--shadow-color);
-    padding: 40px 50px;
+    padding: 25px 20px;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -139,6 +145,7 @@ body {
 
 .poem-container {
     position: relative;
+    width: 100%;
 }
 
 .dedication {
@@ -150,24 +157,25 @@ body {
 .telugu-dedication-box {
     background-color: var(--gold-light);
     border-radius: var(--border-radius);
-    padding: 20px;
+    padding: 20px 15px;
     margin: 30px 0 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     border-left: 4px solid var(--gold-dark);
 }
 
 .telugu-text {
-    font-family: EB Gramond;
-    font-size: 18px;
+    font-family: 'Noto Sans Telugu', 'Noto Sans', sans-serif;
+    font-size: clamp(14px, 4vw, 18px);
     line-height: 1.8;
     color: #5c4c3d;
-    font-style: none;
+    font-style: italic;
     text-align: center;
+    word-wrap: break-word;
 }
 
 .poem-title {
     font-family: 'EB Garamond', serif;
-    font-size: 42px;
+    font-size: clamp(28px, 8vw, 42px);
     margin-bottom: 15px;
     font-weight: 600;
     letter-spacing: 2px;
@@ -187,15 +195,16 @@ body {
 }
 
 .dedication-subtitle {
-    font-style: none;
+    font-style: italic;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: clamp(16px, 5vw, 20px);
     color: #8a7357;
     font-weight: normal;
 }
 
 .poem-content {
     padding: 20px 0;
+    width: 100%;
 }
 
 .stanza {
@@ -205,8 +214,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    padding: 15px;
+    padding: 15px 10px;
     border-radius: var(--border-radius);
+    width: 100%;
 }
 
 .stanza:hover {
@@ -216,12 +226,14 @@ body {
 
 .stanza-text {
     flex: 1;
-    min-width: 300px;
-    padding-right: 25px;
+    min-width: 200px;
+    padding-right: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .stanza-text p {
-    font-size: 19px;
+    font-size: clamp(16px, 4.5vw, 19px);
     line-height: 1.8;
     margin-bottom: 10px;
     color: #3a3430;
@@ -232,8 +244,8 @@ body {
     color: #8a7357;
     border: none;
     border-radius: 50%;
-    width: 38px;
-    height: 38px;
+    width: var(--touch-size);
+    height: var(--touch-size);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -241,6 +253,8 @@ body {
     transition: all var(--transition-speed);
     margin-top: 8px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+    touch-action: manipulation;
 }
 
 .pov-button:hover {
@@ -270,12 +284,13 @@ body {
     margin-top: 20px;
     opacity: 0;
     padding: 0;
+    width: 100%;
 }
 
 .pov-content.active {
     max-height: 500px;
     opacity: 1;
-    padding: 20px 25px;
+    padding: 20px 15px;
     margin-bottom: 15px;
     border-left: 3px solid var(--gold-dark);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -283,26 +298,28 @@ body {
 
 .pov-content h3 {
     font-family: 'EB Garamond', serif;
-    font-size: 22px;
+    font-size: clamp(18px, 5vw, 22px);
     margin-bottom: 12px;
     color: #5c4c3d;
     font-weight: 600;
 }
 
 .pov-content p {
-    font-size: 17px;
+    font-size: clamp(15px, 4vw, 17px);
     line-height: 1.7;
     color: #5c4c3d;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .signature {
     text-align: right;
     margin-top: 50px;
     font-family: 'EB Garamond', serif;
-    font-style:none;
-    font-size: 19px;
+    font-style: italic;
+    font-size: clamp(16px, 4.5vw, 19px);
     color: #5c4c3d;
-    padding-right: 20px;
+    padding-right: 10px;
     position: relative;
 }
 
@@ -320,63 +337,99 @@ body {
     display: block;
     margin-top: 5px;
     font-weight: 600;
-    color: black;
-    font-size: 18px;
+    color: var(--gold-dark);
+    font-size: clamp(16px, 4.5vw, 18px);
 }
 
-/* Responsive styles */
+/* Responsive styles - improved for mobile */
 @media (max-width: 768px) {
     .container {
-        padding: 30px 20px;
-        margin: 20px auto;
+        padding: 20px 15px;
+        margin: 15px auto;
+        width: calc(100% - 20px);
+        max-width: 100%;
     }
     
-    .poem-title {
-        font-size: 30px;
+    .stanza {
+        padding: 10px 5px;
     }
     
-    .telugu-text {
-        font-size: 16px;
+    .pov-button {
+        margin-left: auto;
     }
     
-    .stanza-text p {
-        font-size: 16px;
+    .stanza-text {
+        width: calc(100% - 55px);
+        padding-right: 10px;
     }
     
-    .pov-content h3 {
-        font-size: 18px;
-    }
-    
-    .pov-content p {
-        font-size: 15px;
+    .signature:before {
+        width: 120px;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 20px 15px;
+        padding: 15px 12px;
         margin: 10px auto;
+        border-radius: 8px;
     }
     
-    .poem-title {
-        font-size: 26px;
+    .telugu-dedication-box {
+        padding: 15px 10px;
+        margin: 20px 0 30px;
     }
     
-    .dedication-subtitle {
-        font-size: 16px;
+    .poem-content {
+        padding: 10px 0;
     }
     
-    .telugu-text {
-        font-size: 15px;
+    .stanza {
+        margin-bottom: 25px;
+        padding: 8px 5px;
     }
     
-    .stanza-text {
-        padding-right: 10px;
+    .pov-content.active {
+        padding: 15px 12px;
+    }
+    
+    .signature {
+        margin-top: 30px;
+    }
+    
+    .signature:before {
+        width: 100px;
     }
     
     .pov-button {
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Fix for very small devices */
+@media (max-width: 320px) {
+    .container {
+        padding: 12px 8px;
+        margin: 5px auto;
+    }
+    
+    .stanza-text {
+        width: calc(100% - 45px);
+        min-width: unset;
+    }
+    
+    .telugu-dedication-box {
+        margin: 15px 0 20px;
+    }
+    
+    .pov-button {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .stanza {
+        margin-bottom: 20px;
     }
 }
 
@@ -413,8 +466,8 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background: radial-gradient(circle at top right, var(--accent-light) 10%, transparent 70%);
     opacity: 0.7;
     z-index: -1;
@@ -425,8 +478,8 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     background: radial-gradient(circle at bottom left, var(--accent-light) 10%, transparent 70%);
     opacity: 0.5;
     z-index: -1;
