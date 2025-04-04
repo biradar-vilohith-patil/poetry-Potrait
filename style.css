@@ -26,12 +26,12 @@
   src: url('fonts/JetBrainsMono-Regular.woff2') format('woff2');
 }
 
+
+
+
 body {
+      
   font-family: 'JetBrains Mono', monospace;
-}
-
-
-body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
@@ -58,6 +58,7 @@ body {
 }
 
 .popup-content {
+    font : "EB Garamond";
     background: linear-gradient(135deg, #fff, #f8f3e8);
     padding: 30px;
     border-radius: 20px;
