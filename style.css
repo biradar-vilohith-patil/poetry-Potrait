@@ -67,6 +67,7 @@ body {
 }
 
 .popup-content h2 {
+    font : "EB Garamond";
     color: #e25c67;
     font-size: clamp(1.8rem, 5vw, 2.5rem);
     margin-bottom: 20px;
