@@ -155,4 +155,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Start the background effects after a short delay
     setTimeout(randomBackgroundEffects, 2000);
-});
+});  
