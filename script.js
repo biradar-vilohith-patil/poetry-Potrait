@@ -156,3 +156,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start the background effects after a short delay
     setTimeout(randomBackgroundEffects, 2000);
 });
+
+
+// Global Poet's POV Toggle
+const globalPovToggle = document.getElementById("globalPovToggle");
+if (globalPovToggle) {
+  globalPovToggle.addEventListener("change", () => {
+    const povs = document.querySelectorAll(".pov");
+    povs.forEach(pov => {
+      pov.style.display = globalPovToggle.checked ? "block" : "none";
+    });
+  });
+}
+
+// Scroll-based Fade-in Animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+document.querySelectorAll('.stanza').forEach(stanza => {
+  observer.observe(stanza);
+});
